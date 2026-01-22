@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: devops-learning-bot
+    env: docker
+    plan: free
+    region: singapore
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+    autoDeploy: true
