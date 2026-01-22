@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Learning Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🚀</span>
+                <h1>DevOps<br>Assistant</h1>
+            </div>
+            
+            <nav class="nav">
+                <button class="nav-btn active" data-tab="docker">
+                    <span class="nav-icon">🐳</span>
+                    <span>Docker</span>
+                </button>
+                <button class="nav-btn" data-tab="kubernetes">
+                    <span class="nav-icon">☸️</span>
+                    <span>Kubernetes</span>
+                </button>
+                <button class="nav-btn" data-tab="cicd">
+                    <span class="nav-icon">🧪</span>
+                    <span>CI/CD</span>
+                </button>
+                <button class="nav-btn" data-tab="yaml">
+                    <span class="nav-icon">📊</span>
+                    <span>YAML</span>
+                </button>
+                <button class="nav-btn" data-tab="quiz">
+                    <span class="nav-icon">📝</span>
+                    <span>Quiz</span>
+                </button>
+                <button class="nav-btn" data-tab="ai">
+                    <span class="nav-icon">🧠</span>
+                    <span>AI Error</span>
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <p>සිංහල Supported</p>
+                <a href="https://t.me/YourBotName" target="_blank" class="telegram-link">
+                    📱 Telegram Bot
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Docker Tab -->
+            <section id="docker" class="tab-content active">
+                <div class="tab-header">
+                    <h2>🐳 Docker Sandbox</h2>
+                    <p>Practice Docker commands safely</p>
+                </div>
+                
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">Docker Terminal</span>
+                    </div>
+                    <div id="docker-output" class="terminal-output">
+                        <p class="welcome">Welcome to Docker Sandbox! Try: docker run nginx</p>
+                    </div>
+                    <div class="terminal-input-wrap">
+                        <span class="prompt">$</span>
+                        <input type="text" id="docker-input" class="terminal-input" placeholder="docker run nginx" autofocus>
+                    </div>
+                </div>
+                
+                <div class="quick-commands">
+                    <h3>Quick Commands</h3>
+                    <div class="command-grid">
+                        <button class="cmd-btn" data-cmd="docker run nginx">docker run nginx</button>
+                        <button class="cmd-btn" data-cmd="docker ps">docker ps</button>
+                        <button class="cmd-btn" data-cmd="docker images">docker images</button>
+                        <button class="cmd-btn" data-cmd="docker build -t myapp .">docker build</button>
+                        <button class="cmd-btn" data-cmd="docker logs">docker logs</button>
+                        <button class="cmd-btn" data-cmd="docker help">docker help</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kubernetes Tab -->
+            <section id="kubernetes" class="tab-content">
+                <div class="tab-header">
+                    <h2>☸️ Kubernetes Learning</h2>
+                    <p>Master kubectl commands and K8s concepts</p>
+                </div>
+                
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">kubectl Terminal</span>
+                    </div>
+                    <div id="k8s-output" class="terminal-output">
+                        <p class="welcome">Kubernetes Simulator Ready! Try: kubectl get pods</p>
+                    </div>
+                    <div class="terminal-input-wrap">
+                        <span class="prompt">$</span>
+                        <input type="text" id="k8s-input" class="terminal-input" placeholder="kubectl get pods">
+                    </div>
+                </div>
+                
+                <div class="concepts-grid">
+                    <h3>Learn Concepts</h3>
+                    <div class="concept-cards">
+                        <button class="concept-card" data-concept="pod">
+                            <span class="concept-icon">📦</span>
+                            <span>Pod</span>
+                        </button>
+                        <button class="concept-card" data-concept="deployment">
+                            <span class="concept-icon">🚀</span>
+                            <span>Deployment</span>
+                        </button>
+                        <button class="concept-card" data-concept="service">
+                            <span class="concept-icon">🌐</span>
+                            <span>Service</span>
+                        </button>
+                        <button class="concept-card" data-concept="configmap">
+                            <span class="concept-icon">⚙️</span>
+                            <span>ConfigMap</span>
+                        </button>
+                        <button class="concept-card" data-concept="secret">
+                            <span class="concept-icon">🔐</span>
+                            <span>Secret</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CI/CD Tab -->
+            <section id="cicd" class="tab-content">
+                <div class="tab-header">
+                    <h2>🧪 CI/CD Pipeline Visualizer</h2>
+                    <p>Visualize GitHub Actions workflows</p>
+                </div>
+                
+                <div class="editor-layout">
+                    <div class="editor-panel">
+                        <div class="panel-header">
+                            <span>Workflow YAML</span>
+                            <div class="sample-btns">
+                                <button class="sample-btn" data-sample="nodejs">Node.js</button>
+                                <button class="sample-btn" data-sample="docker">Docker</button>
+                            </div>
+                        </div>
+                        <textarea id="cicd-input" class="code-editor" placeholder="Paste your GitHub Actions YAML here..."></textarea>
+                        <button id="visualize-btn" class="primary-btn">Visualize Pipeline</button>
+                    </div>
+                    <div class="output-panel">
+                        <div class="panel-header">Pipeline Visualization</div>
+                        <div id="cicd-output" class="visualization-output">
+                            <p class="placeholder">Pipeline will appear here...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- YAML Tab -->
+            <section id="yaml" class="tab-content">
+                <div class="tab-header">
+                    <h2>📊 YAML Validator</h2>
+                    <p>Validate and understand YAML files</p>
+                </div>
+                
+                <div class="editor-layout">
+                    <div class="editor-panel">
+                        <div class="panel-header">YAML Input</div>
+                        <textarea id="yaml-input" class="code-editor" placeholder="Paste your YAML here..."></textarea>
+                        <button id="validate-btn" class="primary-btn">Validate YAML</button>
+                    </div>
+                    <div class="output-panel">
+                        <div class="panel-header">Validation Result</div>
+                        <div id="yaml-output" class="validation-output">
+                            <p class="placeholder">Results will appear here...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Tab -->
+            <section id="quiz" class="tab-content">
+                <div class="tab-header">
+                    <h2>📝 DevOps Interview Quiz</h2>
+                    <p>Prepare for your next interview</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="category-selector">
+                        <button class="cat-btn active" data-category="">All Topics</button>
+                        <button class="cat-btn" data-category="docker">Docker</button>
+                        <button class="cat-btn" data-category="kubernetes">Kubernetes</button>
+                        <button class="cat-btn" data-category="cicd">CI/CD</button>
+                        <button class="cat-btn" data-category="linux">Linux</button>
+                        <button class="cat-btn" data-category="devops">DevOps</button>
+                    </div>
+                    
+                    <div class="question-card">
+                        <div id="question-text" class="question-text">
+                            Click "New Question" to start!
+                        </div>
+                        <div id="answer-text" class="answer-text hidden"></div>
+                        <div class="quiz-actions">
+                            <button id="show-answer" class="secondary-btn">Show Answer</button>
+                            <button id="next-question" class="primary-btn">New Question</button>
+                        </div>
+                    </div>
+                    
+                    <div class="lang-toggle">
+                        <label>
+                            <input type="checkbox" id="sinhala-toggle">
+                            <span>සිංහල Answers</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Error Tab -->
+            <section id="ai" class="tab-content">
+                <div class="tab-header">
+                    <h2>🧠 AI Error Explainer</h2>
+                    <p>Paste any error log for AI-powered explanation</p>
+                </div>
+                
+                <div class="editor-layout">
+                    <div class="editor-panel">
+                        <div class="panel-header">Error Log</div>
+                        <textarea id="error-input" class="code-editor" placeholder="Paste your error message or log here..."></textarea>
+                        <div class="explain-actions">
+                            <button id="explain-btn" class="primary-btn">Explain Error</button>
+                            <label class="sinhala-label">
+                                <input type="checkbox" id="sinhala-explain">
+                                <span>සිංහල</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="output-panel">
+                        <div class="panel-header">AI Explanation</div>
+                        <div id="ai-output" class="ai-output">
+                            <p class="placeholder">AI explanation will appear here...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
